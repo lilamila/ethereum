@@ -49,6 +49,9 @@ var mortal = mortalContract.new(
     }
  })
 
+
+
+// Creating coins/token supply
 var tokenSource = ' contract token { mapping (address => uint) public coinBalanceOf; event CoinTransfer'
 var tokenCompiled = 
 
@@ -72,6 +75,15 @@ var token = tokenContract.new(
       }
     }
   })
+
+
+// Set up a watch to react whenever anoyone sends a coin using contract
+var event = token.CoinTransfer({}, '', function(error, result){
+  if (!error)
+    console.log("Coin transfer: " + result.args.amount + "tokens were sent. Balances now: \n Sender:\t" + result.args.sender + " \t" + token.coinBalanceOf.call(result.args.sender) + "tokens \n Receiver: \t" + result.args.receiver + " \t" + token.coinBalanceOf.call(result.args.receiver) + " tokens" )
+});
+
+
 
 
 
