@@ -17,3 +17,8 @@ Leafer's Smart Lease is created by [Marie Leaf](https://twitter.com/curbing_entr
 
 * <https://twitter.com/mleafer>
 * <https://github.com/mleafer>
+
+
+### Resources
+
+[Dapps with Meteor](https://github.com/ethereum/wiki/wiki/Dapp-using-Meteor)

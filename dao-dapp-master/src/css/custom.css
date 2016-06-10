@@ -1,0 +1,166 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.oldProposal {
+   background-color:#ffffff;
+}
+.newProposal {
+   background-color:#ffffff;
+}
+
+.face {
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  width: 48px;
+  height: 48px;
+  margin: 16px;
+}
+
+.slideDown {
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s;
+  -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s;
+  -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s;
+  pointer-events : none;
+  width: 100%;
+  padding-left: 80px; 
+}
+
+@media only screen and (max-width: 500px) {
+    .slideDown {
+         padding-left: 15px;
+    }
+}
+
+md-list-item {
+   align-items: flex-start !important;
+}
+.md-list-item-inner {
+    -webkit-align-items: flex-start !important;
+    -ms-flex-align: flex-start !important;
+}
+.text-light {
+  padding-left:8px;
+  font-size:12px;
+}
+.desc {
+  padding-top:5px;
+  font-size: 18px;
+}
+.amount {
+  padding-top:5px;
+  padding-right:10px;
+  font-size: 24px;
+  line-height: 20px;
+  white-space: nowrap;
+}
+.eth {
+  color:#aaaaaa;
+  text-align: right;
+  font-size: 12px;
+  padding-right:10px;
+}
+.date {
+  font-size: 12px;
+  color: rgb(33,150,243);
+}
+.headline {
+  padding-top:10px;
+  padding-bottom:10px;
+}
+.plabel {
+  width:80px;
+  min-width:80px;
+  font-size: 12px;
+}
+.pnumber {
+  text-align:right;
+  width:90px;
+  font-size: 12px;
+
+}
+.pvalue {
+  text-overflow:ellipsis; 
+  word-wrap: break-word;
+  overflow:hidden;
+  font-size: 12px;
+}
+
+.ptext {
+  padding-top:10px;
+  font-size: 12px;
+}
+
+.centeredRow {
+  align-items: center !important;
+  -webkit-align-items: center !important;
+  -ms-flex-align: center !important;
+}
+
+.progressRow {
+  align-items: center !important;
+  -webkit-align-items: center !important;
+  -ms-flex-align: center !important;
+  padding-right:10px
+}
+md-list-item-text {
+  
+}
+
+.noselect {
+   outline: 0;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;           /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
+
+.md-select-value span {
+  color: black;
+}
+.md-toolbar-tools .md-label {
+    color:black
+}
+
+.ptabs {
+  background-color: rgb(33,150,243);
+}
+
+md-tabs.md-default-theme, md-tabs md-ink-bar {
+    color: red !important;
+    background: red  !important;
+}
+
+.pwhite * {
+  color:white !important;
+}
+
+
+md-progress-linear.yes .md-bar2,md-progress-linear.yesno .md-bar2 {
+  background-color: green;
+}
+
+md-progress-linear.no .md-bar2 {
+  background-color: red;
+}
+
+
+md-progress-linear.no .md-bar1,md-progress-linear.yes .md-bar1 {
+  background-color: rgb(235,235,235) !important;
+}
+
+md-progress-linear.yesno .md-bar1 {
+  background-color: red !important;
+}
+
+md-progress-linear.yesno .md-container {
+  height: 2px;
+}
+
+.slideDown md-tab-item {
+    color: black !important;
+}
