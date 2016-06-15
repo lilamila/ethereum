@@ -16,24 +16,50 @@ features:
 
 
 // set up personas
-contract User{
+contract user {
     address public owner;
-    function tenant(){
+    function user(){
         owner = msg.sender;
         }
     function kill(){
         suicide(owner); //specify address to send ether back to upon user deletion
     }
-}
 
-contract Tenant is User{
-    string public tenantName;
-    function Tenant(string _name){
-        tenantName = _name;
+    modifier onlyOwner{
+        if (msg.sender != owner){
+            throw;
+        }else{
+            -
+        }
     }
 }
 
-contract Landlord is User{
+contract Tenant is user {
+    string public tenantName;
+
+    mapping(address=>Lease) public leases;
+     // mapping allows one type of variable as index for an array
+    struct Lease{
+        bool active;
+        uint lastUpdate;
+        uint256 debt;
+    }
+    function Tenant(string _name){
+        tenantName = _name;
+    }
+
+    //onlyOwner is a modifier (refer to the modifier in User)
+    function registerToLease(address _landlordAddress) onlyOwner{
+        //map to array of leases, and update to a cell which will contain a Lease object
+        leases[_landlordAddress] = Lease({
+            active: true,
+            lastUpdate: now,
+            debt: 0
+            });
+    }
+}
+
+contract Landlord is user {
     string public landlordName;
     string public physicalAddress;
     function Landlord(
