@@ -14,9 +14,39 @@ features:
 4. feedback system for tenants - chip in dishwasher, fridge, shower other connected items in house
 */
 
+
+// set up personas
+contract User{
+    address public owner;
+    function tenant(){
+        owner = msg.sender;
+        }
+    function kill(){
+        suicide(owner); //specify address to send ether back to upon user deletion
+    }
+}
+
+contract Tenant is User{
+    string public tenantName;
+    function Tenant(string _name){
+        tenantName = _name;
+    }
+}
+
+contract Landlord is User{
+    string public landlordName;
+    string public physicalAddress;
+    function Landlord(
+        string _name,
+        string _physicalAddress){
+        landlordName = _name;
+        physicalAddress = _physicalAddress;
+    }
+}
+
 contract SmartLease  {
 	mapping (address => uint) public coinBalanceOf;
-    uint monthlyRent;
+    uint monthlyRentInEthers;
     uint monthsDuration;
     bool leaseCompleted = false;
     token addressOfTokenUsedForRent
@@ -34,18 +64,18 @@ contract SmartLease  {
     	bool approved = false;
     }
 
-    /* at initialization, setup the landlord */
+    /* at initialization, setup the landlord with lease constructors*/
     function SmartLease(
-        address ifLeaseSignedSendTo,
-        uint monthlyRentInEthers,
-        uint monthsDuration, //set to array
-        uint etherCostofTenantSigning,
+        address _ifLeaseSignedSendTo,
+        uint _monthlyRentInEthers,
+        uint _monthsDuration, //set to array
+        uint _etherCostofTenantSigning,
         token addressOfTokenUsedForRent
         ){
-        landlord = ifLeaseSignedSendTo;
-        monthlyRent = monthlyRentInEthers * 1 ether;
+        landlord = _ifLeaseSignedSendTo;
+        monthlyRent = _monthlyRentInEthers * 1 ether;
         deadlines[] =  //iterate loop to for payment schedule
-        signingPrice = etherCostofTenantSigning * 1 ether;
+        signingPrice = _etherCostofTenantSigning * 1 ether;
         tokenReimbursement = token(addressOfTokenUsedForReimbursement);
     }
     /* The anonymous function is the default called whenever anyone sends funds to the contract */
