@@ -1,20 +1,3 @@
-/* needed logic
-
-features:
-1. ability for tenants to apply for credit check
-2. contract where people sign lease
-	amount on lease
-	duration of lease
-3. tenants fulfill monthly payments
-	if not then severity of legal action upon 
-	1 week overdue
-	30 days overdue
-	60 days overdue
-	system takes x% fee per transaction to pay for gas and to smart contract owner
-4. feedback system for tenants - chip in dishwasher, fridge, shower other connected items in house
-*/
-
-
 // set up personas
 contract user {
     address public owner;
@@ -42,7 +25,7 @@ contract Tenant is user {
     struct Lease{
         bool active;
         uint lastUpdate;
-        uint256 debt;
+        uint256 rent;
     }
     function Tenant(string _name){
         tenantName = _name;
@@ -54,8 +37,19 @@ contract Tenant is user {
         leases[_landlordAddress] = Lease({
             active: true,
             lastUpdate: now,
-            debt: 0
+            rent: 0
             });
+    }
+
+    // ensure priviledge to set debt given to landlord (or lease in later version)
+    //takes the _landlordAddress from the Landlord function so can completely remove 'address _landlordAddress' from the arguments, and replaces with msg.sender
+    function setRent(uint256 _rent){ //address used as a index/pointer to our lease struct
+        if(leases[msg.sender].active){ 
+                leases[msg.sender].lastUpdate = now;
+                leases[msg.sender].rent = _rent;
+            }else{
+                throw;
+            }
     }
 }
 
@@ -68,7 +62,27 @@ contract Landlord is user {
         landlordName = _name;
         physicalAddress = _physicalAddress;
     }
+
+    function setRent(uint256 _rent, address _landlordAddress){
+        //inherits/gets all functionality of the Landlord object directly interacts with the person object
+        // set Landlord object and set to operate as a Landlord contract, deployed on specified _landlordAddress
+        Landlord person = Landlord(_landlordAddress); 
+        person.setRent(uint256 _rent);
+
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+// old code
 
 contract SmartLease  {
 	mapping (address => uint) public coinBalanceOf;
