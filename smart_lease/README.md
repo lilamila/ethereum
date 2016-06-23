@@ -14,18 +14,38 @@ Leafer's Smart Lease is created by [Marie Leaf](https://twitter.com/curbing_entr
 
 ### Roadmap
 
-Features:  
-1. ability for tenants to apply for credit check  
-2. contract where people sign lease  
-    amount on lease  
-    duration of lease  
-3. tenants fulfill monthly payments  
-    if not then severity of legal action upon  
-    1 week overdue  
-    30 days overdue  
-    60 days overdue  
-    system takes x% fee per transaction to pay for gas and to smart contract owner  
-4. feedback system for tenants - chip in dishwasher, fridge, shower other connected items in house  
+Front-end:  
+1. Mobile first
+
+
+Back-end Features (Contracts):  
+1. Identity + Reputation Contract - boolean logic and state stored in initial user registration to interact with all contracts in the app.  
+2. Pre-Processing Contract  
+* Ability for tenants to apply for credit check and lease application  
+* Implement background check logic, ID verification
+* ID updated with approval boolean   
+3. Lease Contract  
+* Variables defined:  
+    - USD/ETH/BTC amount on lease  
+    - Duration of lease  
+* Ability for tenants and landlord to sign lease  
+* Pay rent transfer  
+    - Automatic through prefilled token  
+    - Automatic through bank account integration  
+    - Set reminder  
+    - Register small positive to reputation contract upon payment  
+4. Grievances Contract
+    - If late payment, register to reputation system
+    - If 1 week overdue, if 30 days overdue, if 60 days overdue dock reputation accordingly  
+    - Reminder options set for landlord to text, email, call tenant or send collections agent  
+5. Connected Device Contract  
+    - Ability for landlord to register connected devices and change connected device maintenance clause in lease, prior to signing  
+        + dishwasher, fridge, shower, toilet, air conditioning
+    - Malfunction alert, logs time, nature, and sends preprogrammed message to handy man/super's communication choice  
+    - Landlord reputation dock if request not fulfilled in pre agreed time  
+
+Fuel Structure:
+1. Smart Lease takes x% fee per transaction to pay for gas and to smart contract developer  
 
 ### Creator
 **Marie Leaf**
