@@ -11,20 +11,32 @@ Template['blockchainStatus'].helpers({
 	}
 });
 
-Template.hello.onCreated(function helloOnCreated() {
-  // counter starts at 0
-  this.counter = new ReactiveVar(0);
+Template['getContractsByUser'].helpers({
+
 });
 
-Template.hello.helpers({
-  counter() {
-    return Template.instance().counter.get();
-  },
+Template['createNewLease'].events({
+  'click button.create': function (e, template) {
+    alert(template.find('input').value +)
+  }
+
+
 });
 
-Template.hello.events({
-  'click button'(event, instance) {
-    // increment the counter when button is clicked
-    instance.counter.set(instance.counter.get() + 1);
-  },
-});
+// Template.hello.onCreated(function helloOnCreated() {
+//   // counter starts at 0
+//   this.counter = new ReactiveVar(0);
+// });
+
+// Template.hello.helpers({
+//   counter() {
+//     return Template.instance().counter.get();
+//   },
+// });
+
+// Template.hello.events({
+//   'click button'(event, instance) {
+//     // increment the counter when button is clicked
+//     instance.counter.set(instance.counter.get() + 1);
+//   },
+// });

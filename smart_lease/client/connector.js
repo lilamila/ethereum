@@ -1,4 +1,14 @@
+
 var Web3 = require("web3");
+
+// get the latest block
+web3.eth.filter('latest').watch(function(e, blockHash){
+  if(!e) {
+    web3.eth.getBlock(blockHash, function(e, block){
+      Session.set('latestBlock', block); //changes reactive session variable 'latestBlock', rerunning
+    })
+  }
+})
 
 function Connector(web3, address) {
     if (address && address.indexOf("#")==0) address = address.substring(1);

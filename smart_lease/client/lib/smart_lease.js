@@ -19,9 +19,15 @@ var landlord =  //get submission from UI
 var tenant = //get submission from UI
 
 var smartLeaseContract = web3.eth.contract([{"constant":false,"inputs":[],"name":"kill","outputs":[],"type":"function"},{"inputs":[],"type":"constructor"}]);
-
 var smartLease = smartLeaseContract.new(
 		landlord, tenant)
+
+
+// compile the source code
+web3.eth.compile.solidity(soliditySource)
+
+
+
 
 
 

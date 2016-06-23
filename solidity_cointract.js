@@ -21,6 +21,7 @@ var greeter = greeterContract.new(_greeting,{from:web3.eth.accounts[0], data: gr
 
 
 var _greeting = "Yo yo yo!" ;
+//json representations of the functions or ABI 
 var greeterContract = web3.eth.contract([{"constant":false,"inputs":[],"name":"kill","outputs":[],"type":"function"},{"constant":true,"inputs":[],"name":"greet","outputs":[{"name":"","type":"string"}],"type":"function"},{"inputs":[{"name":"_greeting","type":"string"}],"type":"constructor"}]);
 var greeter = greeterContract.new(
    _greeting,

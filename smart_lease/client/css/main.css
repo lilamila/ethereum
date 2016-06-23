@@ -1,3 +1,6 @@
+// libs
+@import '{ethereum:dapp-styles}/dapp-styles.less'; 
+/* Now you can use all dapp-styles classes and also overwrite all variables of the framework. You can find them in the repo. (https://github.com/ethereum/dapp-styles/blob/master/constants.import.less) Overwrite them by copying them to your myDapp.less file and set different values.*/
 @import url(font-awesome.min.css);
 @import url("http://fonts.googleapis.com/css?family=Raleway:300,700");
 

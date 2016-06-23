@@ -51,6 +51,11 @@ contract Tenant is user {
                 throw;
             }
     }
+
+    function payRent(address _landlordAddress){
+        _landlordAddress.send(leases[_landlordAddress].rent);
+
+    }
 }
 
 contract Landlord is user {
