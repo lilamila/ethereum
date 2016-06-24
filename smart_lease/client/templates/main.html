@@ -7,11 +7,18 @@
 </head>
 
 <body>
+  <div class="container">
   <h1>BlockLease</h1>
+  </div>
+  {{> nav}}
   {{> navBar}}
   {{> blockchainStatus}}
   {{> createNewLease}}
+  {{> existingLeases}}
   {{> footer}}
+    {{#each leases}}
+    {{> lease}}
+  {{/each}}
 </body>
 
 <template name="blockchainStatus">
@@ -36,9 +43,21 @@
 </div>
 </template>
 
-<template name="footer">
+<template name="existingLeases">
+<div class="container">
   <ul>
-    <li><a href="https://github.com/mleafer/ethereum/tree/master/smart_lease">View Source</a></li>
-
+  {{#each leases}}
+    {{physAddress}}
+    {{> lease}}
+  {{/each}}
   </ul>
+</div>
+</template>
+
+<template name="lease">
+<div class="container">
+  <li>
+    {{physAddress}}
+  </li>
+</div>
 </template>
