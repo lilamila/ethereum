@@ -1,26 +1,44 @@
 <head>
   <!-- <script src="js/jQuery.js"></script> -->
 <!--    <script src="web3.min..js"></script> -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>BlockLease</title>
 </head>
 
 <body>
   <h1>BlockLease</h1>
+  {{> navBar}}
   {{> blockchainStatus}}
   {{> createNewLease}}
+  {{> footer}}
 </body>
 
 <template name="blockchainStatus">
   <pre>{{currentBlock}}</pre>
 </template>
 
-<template name="createNewLease">
-  <h2>New Lease</h2>
+<template name="navBar">
+<div class="container">
   <button>Create new lease</button> 
-  <input type="text">
-  
+  <button>Manage Existing Lease</button> 
+  <button>Login</button>
+</div>
+</template>
+
+
+<template name="createNewLease">
+<div class="container">
+  <input name="name" type="text" placeholder="Landlord Name" autofocus required>
+  <input name="name" type="text" placeholder="Tenant Name" autofocus required>
+  <input name="name" type="text" placeholder="Rent Amount" autofocus required>
+  <button>Enter</button> 
+</div>
+</template>
+
+<template name="footer">
   <ul>
-    <li><a href="https://www.meteor.com/try">Do the Tutorial</a></li>
+    <li><a href="https://github.com/mleafer/ethereum/tree/master/smart_lease">View Source</a></li>
 
   </ul>
 </template>
