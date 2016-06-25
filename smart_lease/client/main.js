@@ -1,7 +1,6 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
-
-import './main.html';
+import './templates/main.html';
 
 
 if (Meteor.isClient) {
@@ -10,12 +9,23 @@ if (Meteor.isClient) {
 	
 	// helpers enable use on html
 	Template.body.helpers({
+
+		});
+
+	Template['existingLeases'].helpers({
 		leases: [
 			{ physAddress: "286 Gangsters"}, // TODO attach to EVM /or Blockstack
 			{ physAddress: "The Villager"},
 			{ physAddress: "Milton Mansion"}
 			]
 		});
+
+	Template['createNewLease'].events({
+		'click button': function(e, template) {
+        createNewLeaseInstance.setNumber(template.find('input').value, {from: web3.eth.accounts[0], gas: 50000});
+        template.find('input').value = '';
+		}
+	})
 
 	Template['blockchainStatus'].helpers({
 		currentBlock: function () {

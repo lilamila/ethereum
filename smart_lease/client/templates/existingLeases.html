@@ -2,18 +2,16 @@
 <div class="container">
   <ul>
   {{#each leases}}
-  	{{physAddress}}
   	{{> lease}}
   {{/each}}
+  Testing existing leases
   </ul>
 </div>
 </template>
 
 <template name="lease">
 <div class="container">
-	<li>
-  	{{physAddress}}
-	</li>
+	<li>{{physAddress}}</li>
 </div>
 </template>
 
