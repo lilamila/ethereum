@@ -1,6 +1,10 @@
 
 var Web3 = require("web3");
 
+// set provider
+if(!web3.currentProvider)
+  web3.setProvider(new web3.providers.HttpProvider("http://localhost:8545"));
+
 // get the latest block
 web3.eth.filter('latest').watch(function(e, blockHash){
   if(!e) {

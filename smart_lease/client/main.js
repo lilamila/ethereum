@@ -3,25 +3,46 @@ import { ReactiveVar } from 'meteor/reactive-var';
 
 import './main.html';
 
-Session.setDefault('latestBlock', {}); // updated by the 'latestBlock' function in connector.js
 
-Template['blockchainStatus'].helpers({
-	currentBlock: function () {
-		return JSON.stringify(Session.get('latestBlock'), null, 2);
-	}
-});
+if (Meteor.isClient) {
+	// define Sessions
+	Session.setDefault('latestBlock', {hello:'testing'}); // updated by the 'latestBlock' function in connector.js
+	
+	// helpers enable use on html
+	Template.body.helpers({
+		leases: [
+			{ physAddress: "286 Gangsters"}, // TODO attach to EVM /or Blockstack
+			{ physAddress: "The Villager"},
+			{ physAddress: "Milton Mansion"}
+			]
+		});
 
-Template['getContractsByUser'].helpers({
+	Template['blockchainStatus'].helpers({
+		currentBlock: function () {
+			return JSON.stringify(Session.get('latestBlock'), null, 2);
+		}
+	});
+}
 
-});
+if (Meteor.isServer) {
+	Meteor.startup(function () {
 
-Template['createNewLease'].events({
-  'click button.create': function (e, template) {
-    alert(template.find('input').value +)
-  }
+	});
+}
 
 
-});
+
+// Template['getContractsByUser'].helpers({
+
+// });
+
+// Template['createNewLease'].events({
+//   'click button.create': function (e, template) {
+//     alert(template.find('input').value +)
+//   }
+
+
+// };
 
 // Template.hello.onCreated(function helloOnCreated() {
 //   // counter starts at 0
