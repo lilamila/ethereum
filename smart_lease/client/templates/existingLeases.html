@@ -1,0 +1,19 @@
+<template name="existingLeases">
+<div class="container">
+  <ul>
+  {{#each leases}}
+  	{{physAddress}}
+  	{{> lease}}
+  {{/each}}
+  </ul>
+</div>
+</template>
+
+<template name="lease">
+<div class="container">
+	<li>
+  	{{physAddress}}
+	</li>
+</div>
+</template>
+
