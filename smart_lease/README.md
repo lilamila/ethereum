@@ -4,7 +4,7 @@ The apartment leasing procedure is riddled with overhead. This contract is in de
 Leafer's Smart Lease is created by [Marie Leaf](https://twitter.com/curbing_entropy).
 
 
-### Table of contents
+### Table of Contents
 
 * [Quick Start](#quick-start)
 * [Roadmap](#roadmap)
@@ -14,11 +14,11 @@ Leafer's Smart Lease is created by [Marie Leaf](https://twitter.com/curbing_entr
 
 ### Roadmap
 
-Front-end:  
+**Front-end:**  
 1. Mobile first
 
 
-Back-end Features (Contracts):  
+**Back-end (Contracts):**  
 1. Identity + Reputation Contract - boolean logic and state stored in initial user registration to interact with all contracts in the app.  
 2. Pre-Processing Contract  
 * Ability for tenants to apply for credit check and lease application  
@@ -44,7 +44,7 @@ Back-end Features (Contracts):
     - Malfunction alert, logs time, nature, and sends preprogrammed message to handy man/super's communication choice  
     - Landlord reputation dock if request not fulfilled in pre agreed time  
 
-Fuel Structure:
+**Fuel Structure:**
 1. Smart Lease takes x% fee per transaction to pay for gas and to smart contract developer  
 
 ### Creator
@@ -58,3 +58,6 @@ Fuel Structure:
 
 [Shlomi's Tutorial](https://www.youtube.com/playlist?list=PLH4m2oS2ratdoHFEkGvwvd7TkeTv4sa7Z)
 [Dapps with Meteor](https://github.com/ethereum/wiki/wiki/Dapp-using-Meteor)
+[Web3 JS API](https://github.com/ethereum/wiki/wiki/JavaScript-API)
+[Iron Router](https://github.com/iron-meteor/iron-router)
+[TODO: check out Tradle for Identity](https://github.com/tradle/about/wiki/Identity-on-Ethereum)
