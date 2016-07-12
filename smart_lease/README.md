@@ -1,6 +1,6 @@
 # Leafer's Smart Lease
 
-The apartment leasing procedure is riddled with overhead. This contract is in development to deploy a Dapp to handle all of the document creation, sign off, and rent payments. Eventually, this could be attached to a network of smart devices in the home to ensure maintenance outlined in the leasing agreement is fulfilled. Inspired by my recent apartment lease signing/notarizing headache.
+The apartment leasing procedure is riddled with overhead. This Dapp is in development to deploy contracts to handle document creation, sign off, and rent payments. Eventually, this could be attached to a network of smart devices in the home to ensure maintenance outlined in the leasing agreement is fulfilled. Inspired by my recent apartment lease signing/notarizing headache.
 Leafer's Smart Lease is created by [Marie Leaf](https://twitter.com/curbing_entropy).
 
 
@@ -44,13 +44,13 @@ Leafer's Smart Lease is created by [Marie Leaf](https://twitter.com/curbing_entr
     - Malfunction alert, logs time, nature, and sends preprogrammed message to handy man/super's communication choice  
     - Landlord reputation dock if request not fulfilled in pre agreed time  
 
-**Fuel Structure:**
+**Fuel Structure:**  
 1. Smart Lease takes x% fee per transaction to pay for gas and to smart contract developer  
 
 ### Creator
 **Marie Leaf**
 
-* <https://twitter.com/mleafer>
+* <https://twitter.com/curbing_entropy>
 * <https://github.com/mleafer>
 
 
