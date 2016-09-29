@@ -1,5 +1,5 @@
-
 var Web3 = require("web3");
+// var web3 = require('ethereum.js')
 
 // set provider
 if(!web3.currentProvider)
