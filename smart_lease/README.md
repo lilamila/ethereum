@@ -1,17 +1,21 @@
 # Leafer's Smart Lease
 
 The apartment leasing procedure is riddled with overhead. This Dapp is in development to deploy contracts to handle document creation, sign off, and rent payments. Eventually, this could be attached to a network of smart devices in the home to ensure maintenance outlined in the leasing agreement is fulfilled. Inspired by my recent apartment lease signing/notarizing headache.
-Leafer's Smart Lease is created by [Marie Leaf](https://twitter.com/curbing_entropy).
+Leafer's Smart Lease is created by [Marie Leaf](https://twitter.com/mariesleaf).
 
 
 ### Table of Contents
 
-* [Quick Start](#quick-start)
+* [Dev Instructions](#Dev Instructions)
 * [Roadmap](#roadmap)
 * [Creator](#creator)
 * [Concepts](#concepts)
 * [Resources](#Resources)
 
+### Dev Instructions
+1. Download and update Meteor
+2. Download web3 packages from [frozeman](https://github.com/frozeman/simple-dapp-example/tree/master/app/.meteor)
+3. 
 ### Roadmap
 
 **Front-end:**  
@@ -50,14 +54,14 @@ Leafer's Smart Lease is created by [Marie Leaf](https://twitter.com/curbing_entr
 ### Creator
 **Marie Leaf**
 
-* <https://twitter.com/curbing_entropy>
+* <https://twitter.com/mariesleaf>
 * <https://github.com/mleafer>
 
 
 ### Resources
 
-[Shlomi's Tutorial](https://www.youtube.com/playlist?list=PLH4m2oS2ratdoHFEkGvwvd7TkeTv4sa7Z)
-[Dapps with Meteor](https://github.com/ethereum/wiki/wiki/Dapp-using-Meteor)
-[Web3 JS API](https://github.com/ethereum/wiki/wiki/JavaScript-API)
-[Iron Router](https://github.com/iron-meteor/iron-router)
-[TODO: check out Tradle for Identity](https://github.com/tradle/about/wiki/Identity-on-Ethereum)
+[Shlomi's Tutorial](https://www.youtube.com/playlist?list=PLH4m2oS2ratdoHFEkGvwvd7TkeTv4sa7Z)  
+[Dapps with Meteor](https://github.com/ethereum/wiki/wiki/Dapp-using-Meteor)  
+[Web3 JS API](https://github.com/ethereum/wiki/wiki/JavaScript-API)  
+[Iron Router](https://github.com/iron-meteor/iron-router)  
+[TODO: check out Tradle for Identity](https://github.com/tradle/about/wiki/Identity-on-Ethereum)  
