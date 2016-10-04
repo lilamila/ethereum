@@ -5,21 +5,23 @@ contract user {
 
     address public owner;
 
-    function user(){ //no arguments for constructor
+    function user(){ //no arguments for constructor. constructor runs on deploy, and then never again. constructors cost gas to run
         owner = msg.sender; //constructor will take address of sender of contract and assign into variable we just created
         } //msg is predefined object in sol and sender means address of sender so compiler knows to take my address and assign it into public owner variable
     
-    function kill(){
+    function kill() onlyOwner{
         suicide(owner); //specify address to send ether back to upon user deletion
     }
 
-    modifier onlyOwner{
+    //shlomi's modifiers: https://youtu.be/FGnv8Vfu9bY?list=PLH4m2oS2ratdoHFEkGvwvd7TkeTv4sa7Z
+    modifier onlyOwner{ //http://ethereum.stackexchange.com/questions/8958/solidity-compile-error-expected-primary-expression
         if (msg.sender != owner){
             throw;
         }else{
-            -
+            _;
         }
     }
+
 }
 
 contract Tenant is user {
@@ -69,8 +71,16 @@ contract Tenant is user {
 }
 
 contract Landlord is user {
+
     string public landlordName;
     string public physicalAddress;
+
+    event SetRent(address from, uint value);
+    event SetNumber();
+    //events allow convenient usage of EVM logging facilities, which in turn can be used to
+    //call JS callbacks in US of dapp, which listen to these events
+    // https://solidity.readthedocs.io/en/latest/contracts.html#events
+
     function Landlord(
         string _name,
         string _physicalAddress){
@@ -92,9 +102,10 @@ contract Landlord is user {
 
 
 
-// set up SmartLease contract
+// long term code - different object structure to code above, better for long run. 
+// tabling for now (date Oct.2016) to focus on UI
 
-// old code - different object structure to code above
+// set up SmartLease contract
 
 // contract SmartLease  {
 // 	mapping (address => uint) public coinBalanceOf;
