@@ -26,30 +26,15 @@ var user = userContract.new(
    }, function (e, contract){
     console.log(e, contract);
     if (typeof contract.address !== 'undefined') {
-         console.log('Contract mined! address: ' + contract.address + ' transactionHash: ' + contract.transactionHash);
+         console.log('User contract mined! address: ' + contract.address + ' transactionHash: ' + contract.transactionHash);
     }
  })
 
-// create lease object
-leaseNew = leaseContract.new(
-		landlord, tenant)
+// // create lease object
+// leaseNew = leaseContract.new(
+// 		landlord, tenant)
 
-createNewLeaseInstance = leaseContract.at['0x36b64d3c67970a052515dc845185deccc411336e']
-
-// create user object
-
-var userContract = web3.eth.contract([{"constant":false,"inputs":[],"name":"kill","outputs":[],"type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"type":"function"},{"inputs":[],"type":"constructor"}]);
-var user = userContract.new(
-   {
-     from: web3.eth.accounts[0], 
-     data: '60606040525b33600060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908302179055505b60e88061003e6000396000f360606040526000357c01000000000000000000000000000000000000000000000000000000009004806341c0e1b51460415780638da5cb5b14604e57603f565b005b604c60048050506085565b005b6059600480505060c2565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b600060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16ff5b565b600060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156', 
-     gas: 4700000
-   }, function (e, contract){
-    console.log(e, contract);
-    if (typeof contract.address !== 'undefined') {
-         console.log('Contract mined! address: ' + contract.address + ' transactionHash: ' + contract.transactionHash);
-    }
- })
+// createNewLeaseInstance = leaseContract.at['0x36b64d3c67970a052515dc845185deccc411336e']
 
 
 // create tenant object
@@ -65,7 +50,7 @@ var tenant = tenantContract.new(
    }, function (e, contract){
     console.log(e, contract);
     if (typeof contract.address !== 'undefined') {
-         console.log('Contract mined! address: ' + contract.address + ' transactionHash: ' + contract.transactionHash);
+         console.log('Tenant Contract mined! address: ' + contract.address + ' transactionHash: ' + contract.transactionHash);
     }
  })
 
@@ -84,7 +69,7 @@ var landlord = landlordContract.new(
    }, function (e, contract){
     console.log(e, contract);
     if (typeof contract.address !== 'undefined') {
-         console.log('Contract mined! address: ' + contract.address + ' transactionHash: ' + contract.transactionHash);
+         console.log('Landlord Contract mined! address: ' + contract.address + ' transactionHash: ' + contract.transactionHash);
     }
  })
 

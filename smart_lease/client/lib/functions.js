@@ -17,7 +17,7 @@ web3.eth.filter('latest').watch(function(e, blockHash) {
 
 web3.eth.getBalance('0x55eea8e07d2ed078eb211b8d03c5e9635e6f0011')
 
-// addlease instance
+// check if money arrived
 
 CreateLeaseInstance.Deposit({},{fromBlock: 0, toBlock: 'latest'}).watch(function(e, log) {
     if(!e) {

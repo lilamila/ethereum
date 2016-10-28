@@ -1,7 +1,7 @@
 // contract interaction tutorial: https://www.youtube.com/watch?v=m9Zb49RNGis&t=13s
 
 // set up personas
-contract user {
+contract User {
 
     address public owner;
 
@@ -24,7 +24,7 @@ contract user {
 
 }
 
-contract Tenant is user {
+contract Tenant is User {
     string public tenantName;
 
     mapping(address=>Lease) public leases;
@@ -70,7 +70,7 @@ contract Tenant is user {
     }
 }
 
-contract Landlord is user {
+contract Landlord is User {
 
     string public landlordName;
     string public physicalAddress;

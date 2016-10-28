@@ -2,7 +2,11 @@
 <div class="container">
   <ul>
   {{#each leases}}
+  	<p>Lease: </p>
   	{{> lease}}
+  	<p>From: {{from}}</p>
+  	<p>Value: {{value}}</p>
+  	<p>Block: {{blockNumber}}</p>
   {{/each}}
   Testing existing leases
   </ul>
